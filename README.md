@@ -4,12 +4,13 @@
 
 ---  
 
-## Client-side
+## Client-side  
+- Simula o comportamento do SIG  
 - Servidor dedicado a servir uma página web  
 - Página web (HTML, JavaScript, CSS)  
 - Realiza requisição a API e exibe os resultados  
 
-
 ## Server-side  
+- Simula o futuro comportamento do FITradeOff  
 - Servidor dedicado a API e suas requisições  
 - Realiza suas operações e retorna uma resposta JSON  
