@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/apiCalls.js" defer></script>
+    <title>SIG</title>
+</head>
+<body>
+    <main>
+        <div class="entradas">
+            <label for="primeiraEntrada">1º Número</label>
+            <input type="number" id="primeiraEntrada" name="primeiraEntrada" class="primeiraEntrada">
+            <br />
+            <label for="segundaEntrada">2º Número</label>
+            <input type="number" id="segundaEntrada" name="segundaEntrada" class="segundaEntrada">
+        </div>
+        <div class="resultado">
+            Resultado: <span id="resultado">0</span>
+        </div>
+        <div class="botoes">
+            <button onclick="callSomarOnAPI()">Somar</button>
+            <button onclick="callSubtrairOnAPI()">Subtrair</button>
+            <button onclick="callMultiplicarOnAPI()">Multiplicar</button>
+            <button onclick="callDividirOnAPI()">Dividir</button>
+        </div>
+    </main>
+</body>
+</html>
