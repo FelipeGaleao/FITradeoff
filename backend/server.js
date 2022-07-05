@@ -7,7 +7,6 @@ const requestLogger = require('./middlewares/requestLogger')
 const PORT = 3000
 
 app.use(express.json())
-app.use(requestLogger)
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -18,14 +17,25 @@ app.use((req, res, next) => {
     next();
 });
 
-app.post('/somar', (req, res) => {
+// Confirmação para o CORS (evitar problemas com fecth no frontend)
+app.options('*', (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    res.setHeader("Access-Control-Allow-Credentials", "true")
+    res.setHeader("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS, POST, PUT")
     res.status(200)
+    res.end()
+})
+
+app.use(requestLogger)
+
+app.post('/somar', (req, res) => {
     const result = req.body.firstNumber + req.body.secondNumber
 
-    return res.json({
+    res.json({
         'result': result
     })
-
+    .status(200)
+    .end()
 });
 
 app.post('/subtrair', (req, res, next) => {
