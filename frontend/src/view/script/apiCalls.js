@@ -1,4 +1,4 @@
-const HOST = 'localhost'
+const HOST = 'http://localhost'
 const PORT = 3000
 const URI = `${HOST}:${PORT}`
 
