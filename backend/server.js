@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 });
 
 app.post('/somar', (req, res) => {
-    
+    res.status(200)
     const result = req.body.firstNumber + req.body.secondNumber
 
     return res.json({
@@ -25,7 +25,7 @@ app.post('/somar', (req, res) => {
 });
 
 app.post('/subtrair', (req, res, next) => {
-    
+    res.status(200)
     const result = req.body.firstNumber - req.body.secondNumber
 
     return res.json({
@@ -34,7 +34,7 @@ app.post('/subtrair', (req, res, next) => {
 })
 
 app.post('/multiplicar', (req, res, next) => {
-    
+    res.status(200)
     const result = req.body.firstNumber * req.body.secondNumber
 
     return res.json({
@@ -44,7 +44,7 @@ app.post('/multiplicar', (req, res, next) => {
 })
 
 app.post('/dividir', (req, res) => {
-    
+    res.status(200)
     const result = req.body.firstNumber / req.body.secondNumber
 
     return res.json({
@@ -54,6 +54,7 @@ app.post('/dividir', (req, res) => {
 })
 
 app.all('*', (req, res) => {
+    res.status(404)
     return res.json({
         'error': 'Page not found.'
     })
